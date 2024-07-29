@@ -7,5 +7,5 @@
 
 # Demo Screenshot for the app
 
-![First](/screenshots/image.png)
-![Second](/screenshots/image-1.png)
+![First](./screenshots/image.png)
+![Second](./screenshots/image-1.png)

@@ -10,5 +10,5 @@
 
 # Screenshots for TO-DO(TS)
 
-![First](/screenshot/image.png)
-![Second](/screenshot/image-1.png)
+![First](./screenshot/image.png)
+![Second](./screenshot/image-1.png)
