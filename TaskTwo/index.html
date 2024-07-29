@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Two | TO DO (TS)</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: #ccc;
+        color: #000;
+      }
+      .container {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+      }
+      h2,
+      h1 {
+        text-align: center;
+      }
+
+      button {
+        padding: 10px;
+        margin: 10px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 10px;
+        transition: 0.5s;
+      }
+
+      input {
+        padding: 10px;
+        margin: 10px;
+        border-radius: 10px;
+      }
+
+      input:focus {
+        outline: none;
+      }
+      button:hover {
+        scale: 1.1;
+      }
+
+      button.delete {
+        background-color: red;
+      }
+
+      .taskContainer {
+        display: flex;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="inner_container">
+        <h1>TO-DO App (TS Version)</h1>
+        <div>
+          <input
+            type="text"
+            placeholder="Add your todo here..."
+            id="todoInput"
+          />
+          <button id="btn">Add Task</button>
+        </div>
+        <h2>Your Todos</h2>
+        <div id="todos"></div>
+      </div>
+    </div>
+
+    <script src="/dist/todo.js"></script>
+  </body>
+</html>
