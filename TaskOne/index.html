@@ -1,43 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Task One | TO DO</title>
     <style>
-        body{
-            font-family: Arial, Helvetica, sans-serif;
-        }
-        .container{
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-        }
-        h2, h1{
-            text-align: center;
-        }
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: #333;
+        color: #fff;
+      }
+      .container {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+      }
+      h2,
+      h1 {
+        text-align: center;
+      }
+
+      button {
+        padding: 10px;
+        margin: 10px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 10px;
+        transition: 0.5s;
+      }
+
+      input {
+        padding: 10px;
+        margin: 10px;
+        border-radius: 10px;
+      }
+
+      input:focus {
+        outline: none;
+      }
+      button:hover {
+        scale: 1.1;
+      }
+
+      button.delete {
+        background-color: red;
+      }
+
+      .taskContainer {
+        display: flex;
+      }
     </style>
-</head>
-<body>
-
+  </head>
+  <body>
     <div class="container">
-        <div class="inner_container">
-            <h1>TO-DO App</h1>
-            <h2>Your Todos</h2>
-
-
-            <div>
-                <input type="text" placeholder="Add your todo here..." id="todoInput">
-                <button id="btn">Add Task</button>
-            </div>
-            <div id="todos">
-                
-            </div>
+      <div class="inner_container">
+        <h1>TO-DO App</h1>
+        <div>
+          <input
+            type="text"
+            placeholder="Add your todo here..."
+            id="todoInput"
+          />
+          <button id="btn">Add Task</button>
         </div>
+        <h2>Your Todos</h2>
+        <div id="todos"></div>
+      </div>
     </div>
 
-
-
     <script src="index.js"></script>
-</body>
+  </body>
 </html>

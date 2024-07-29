@@ -11,8 +11,10 @@ function displayElements(todos) {
     const task = document.createElement("div");
     const taskName = document.createElement("h3");
     const finishedBtn = document.createElement("button");
+    finishedBtn.classList.add("delete");
+    task.classList.add("taskContainer");
     taskName.textContent = todo.todo;
-    finishedBtn.textContent = "Done";
+    finishedBtn.textContent = "X";
     finishedBtn.addEventListener("click", () => {
       todos.map((item) => {
         if (item.id === todo.id) {
