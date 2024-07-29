@@ -11,10 +11,16 @@ function displayElements(todos) {
     const task = document.createElement("div");
     const taskName = document.createElement("h3");
     const finishedBtn = document.createElement("button");
+    const editBtn = document.createElement("Button");
+
     finishedBtn.classList.add("delete");
+    editBtn.classList.add("edit");
     task.classList.add("taskContainer");
+
     taskName.textContent = todo.todo;
     finishedBtn.textContent = "X";
+    editBtn.textContent = "Edit";
+
     finishedBtn.addEventListener("click", () => {
       todos.map((item) => {
         if (item.id === todo.id) {
@@ -23,8 +29,20 @@ function displayElements(todos) {
         }
       });
     });
+
+    editBtn.addEventListener("click", () => {
+      todos.map((item) => {
+        if (item.id === todo.id) {
+          const updated = prompt("Edit your todo");
+          item.todo = updated;
+          displayElements(todos);
+        }
+      });
+    });
+
     task.appendChild(taskName);
     task.appendChild(finishedBtn);
+    task.appendChild(editBtn);
     todosContainer.appendChild(task);
   });
 }

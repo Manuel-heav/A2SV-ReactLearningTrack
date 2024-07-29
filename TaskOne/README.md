@@ -7,5 +7,5 @@
 
 # Demo Screenshot for the app
 
-![Screenshot1](/TaskOne/screenshots/1.png)
-![Screenshot2](/TaskOne/screenshots/2.png)
+![First](/screenshots/image.png)
+![Second](/screenshots/image-1.png)
