@@ -3,7 +3,7 @@ import { Job } from "@/types/job";
 import Left from "./components/Left";
 import Right from "./components/Right";
 import { useEffect, useState } from "react";
-import Loading from "@/app/components/Loading";
+import Loading from "@/components/Loading";
 
 interface JobPost {
   params: { id: string };
