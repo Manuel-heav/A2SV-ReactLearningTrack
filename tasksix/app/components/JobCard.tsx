@@ -14,14 +14,14 @@ const JobCard = ({ title, desc, location, company, logo, id }: JobType) => {
   return (
     <Link
       href={`/jobs/${id}`}
-      className="flex items-start gap-4 mt-5 border p-5 rounded-[30px] justify-center"
+      className="flex items-start gap-4 mt-5 border p-5 rounded-[30px] justify-start"
     >
-      <img src={logo} alt="" />
+      {<img className="h-12 w-12" src={logo ? logo : "/job1.png"} alt="" />}
 
       <div>
         <h1 className="font-bold text-[#25324B] my-2">{title}</h1>
         <p className="text-[#7C8493] my-2">
-          {company} <span>{location}</span>
+          {company}, <span>{location}</span>
         </p>
         <p className="text-[#25324B]">{desc}</p>
         <div className="flex gap-2 mt-5 text-sm">

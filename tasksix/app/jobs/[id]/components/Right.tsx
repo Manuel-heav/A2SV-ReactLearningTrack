@@ -1,6 +1,5 @@
 import React from "react";
 import DateComp from "./DateComp";
-import { About } from "@/types/job";
 import {
   AnotherCalendar,
   CalendarIcon,
@@ -41,10 +40,10 @@ const Right = ({
 
       <div className="mb-5">
         <h1 className="header">Categories</h1>
-        <div className="flex text-sm mt-3 gap-2">
+        <div className="grid grid-cols- text-sm mt-3 gap-2 w-[70%]">
           {categories.map((catagory, i) => (
             <p
-              className={`bg-[#FFB836] bg-opacity-15 text-[#FFB836] py-1 px-2 rounded-full`}
+              className={`bg-[#FFB836] bg-opacity-15 text-[#FFB836] py-1 px-2 rounded-full text-center`}
             >
               {catagory}
             </p>

@@ -4,15 +4,9 @@ import CheckCont from "./CheckCont";
 interface PropType {
   title: string;
   desc: string;
-  responsibilities: string[];
-  ideal_candidate: IdealCandidate;
+  responsibilities: string;
+  ideal_candidate: string;
   when_where: string;
-}
-
-export interface IdealCandidate {
-  age: string;
-  gender: string;
-  traits: string[];
 }
 
 const Left = ({
@@ -32,26 +26,12 @@ const Left = ({
 
       <div className="mb-12">
         <h1 className="header py-4">Responsibilities</h1>
-        {responsibilities.map((responsibility) => (
-          <CheckCont responsibility={responsibility} />
-        ))}
+        <pre className="font-paras">{responsibilities}</pre>
       </div>
 
       <div className="mb-12">
         <h1 className="header py-4">Ideal Candidate We want</h1>
-        <ul className="list-disc ml-6 flex flex-col gap-2">
-          <li>
-            {" "}
-            <span className="font-bold">Age:</span> {ideal_candidate.age}
-          </li>
-          <li>
-            <span className="font-bold">Gender: </span>
-            {ideal_candidate.gender}
-          </li>
-          {ideal_candidate.traits.map((trait) => (
-            <li>{trait}</li>
-          ))}
-        </ul>
+        <ul className="list-disc flex flex-col gap-2">{ideal_candidate}</ul>
       </div>
 
       <div>
@@ -77,12 +57,12 @@ function LocationIcon() {
         className="size-6"
       >
         <path
-          stroke-linecap="round"
+          strokeLinecap="round"
           stroke-linejoin="round"
           d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
         />
         <path
-          stroke-linecap="round"
+          strokeLinecap="round"
           stroke-linejoin="round"
           d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
         />
@@ -91,4 +71,22 @@ function LocationIcon() {
   );
 }
 
+function sadfdIcon() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth={1.5}
+      stroke="currentColor"
+      className="size-6"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h9.75"
+      />
+    </svg>
+  );
+}
 export default Left;

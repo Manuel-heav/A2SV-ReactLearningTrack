@@ -9,9 +9,9 @@ interface FormValues {
 }
 
 const schema = z.object({
-  name: z.string().min(3, "Username can't be empty"),
+  name: z.string().min(1, "Username can't be empty"),
   email: z.string().min(3, "Email is required").email("Email is not valid"),
-  message: z.string().min(1, "Channel can't be empty"),
+  message: z.string().min(1, "Message can't be empty"),
 });
 
 const ContactForm = () => {
@@ -66,6 +66,7 @@ const ContactForm = () => {
             className="block bg-transparent border border-purplish outline-none rounded-xl mb-3 mt-3 px-5 py-2 w-[300px] text-sm text-white"
             placeholder="Enter your message here..."
             {...register("message")}
+            
           />
           <p className="text-[#FF7F7F] text-sm text-center">
             {errors.message?.message}

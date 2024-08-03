@@ -21,7 +21,8 @@ export const AddTask = () => {
         onChange={handleInputChange}
       />
       <button
-        onClick={handleAdd}
+        onMouseEnter={handleAdd}
+        // onClick={handleAdd}
         className="text-4xl text-white bg-purplish ml-5 rounded-lg p-1 px-3"
       >
         +

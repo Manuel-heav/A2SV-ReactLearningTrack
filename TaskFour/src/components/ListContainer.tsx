@@ -5,7 +5,7 @@ import { AddTask } from "./AddTask";
 import Task from "./Task";
 
 export const ListContainer = () => {
-  const [todos, setTodos] = useState<TaskProps[]>(taskQueries.getTodos());
+  const todos = taskQueries.getTodos();
   const [crossedOut, setCrossedOut] = useState<TaskProps[]>(
     taskQueries.getCrossedOutTodos()
   );

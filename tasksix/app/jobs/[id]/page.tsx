@@ -1,47 +1,70 @@
-import fs from "fs";
-import path from "path";
+"use client";
 import { Job } from "@/types/job";
-import { notFound } from "next/navigation";
 import Left from "./components/Left";
 import Right from "./components/Right";
+import { useEffect, useState } from "react";
+import Loading from "@/app/components/Loading";
 
 interface JobPost {
   params: { id: string };
 }
 
-const getJobData = async (id: string): Promise<Job | undefined> => {
-  const filePath = path.join(process.cwd(), "lib", "jobs.json");
-  const jsonData = await fs.promises.readFile(filePath, "utf-8");
-  const jobs = JSON.parse(jsonData);
-  const currJob: Job[] = jobs.job_postings;
-  return currJob.find((job) => job.id === id);
-};
-
-const JobPost = async ({ params }: JobPost) => {
+const JobPost = ({ params }: JobPost) => {
   const { id } = params;
-  const job = await getJobData(id);
+  const [job, setJob] = useState<Job | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchPost = async () => {
+      try {
+        const res = await fetch(
+          `https://akil-backend.onrender.com/opportunities/${id}`
+        );
+        const result = await res.json();
+        setJob(result.data);
+      } catch (err) {
+        console.error(err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchPost();
+  }, []);
+
+  console.log(job);
+
   if (job) {
     const {
       description,
       responsibilities,
-      ideal_candidate,
-      when_where,
-      about,
-      title,
-    } = job;
-
-    const {
-      posted_on,
+      idealCandidate,
+      whenAndWhere,
+      datePosted,
+      createdAt,
+      endDate,
       deadline,
       location,
-      start_date,
-      end_date,
+      startDate,
+      title,
       categories,
-      required_skills,
-    } = about;
+      requiredSkills,
+    } = job;
 
-    console.log(about);
+    const datePostedConverted = new Date(datePosted);
+    const startDateConverted = new Date(startDate);
+    const endDateConverted = new Date(endDate);
+    const deadlineConverted = new Date(deadline);
 
+    const options: Intl.DateTimeFormatOptions = {
+      month: "long",
+      day: "numeric",
+      year: "numeric",
+    };
+
+    if (loading) {
+      return <Loading />;
+    }
     return (
       <div className="grid grid-cols-4 py-8">
         <div className="col-span-3">
@@ -49,26 +72,24 @@ const JobPost = async ({ params }: JobPost) => {
             title={title}
             desc={description}
             responsibilities={responsibilities}
-            ideal_candidate={ideal_candidate}
-            when_where={when_where}
+            ideal_candidate={idealCandidate}
+            when_where={whenAndWhere}
           />
         </div>
 
         <div className="col-span-1">
           <Right
-            posted_on={posted_on}
-            deadline={deadline}
-            location={location}
-            start_date={start_date}
-            end_date={end_date}
+            posted_on={datePostedConverted.toLocaleDateString("en-US", options)}
+            deadline={deadlineConverted.toLocaleDateString("en-US", options)}
+            location={location[0]}
+            start_date={startDateConverted.toLocaleDateString("en-US", options)}
+            end_date={endDateConverted.toLocaleDateString("en-US", options)}
             categories={categories}
-            required_skills={required_skills}
+            required_skills={requiredSkills}
           />
         </div>
       </div>
     );
-  } else {
-    return <h1>No Page Found</h1>;
   }
 };
 

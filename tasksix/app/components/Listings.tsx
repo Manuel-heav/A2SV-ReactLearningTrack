@@ -1,19 +1,35 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import JobCard from "./JobCard";
-import fs from "fs";
-import path from "path";
 import { Job } from "@/types/job";
+import Loading from "./Loading";
 
-const getJobs = async (): Promise<Job[] | undefined> => {
-  const filePath = path.join(process.cwd(), "lib", "jobs.json");
-  const jsonData = await fs.promises.readFile(filePath, "utf-8");
-  const jobs = JSON.parse(jsonData);
-  const currJobs: Job[] = jobs.job_postings;
-  return currJobs;
-};
+const Listings = () => {
+  const [jobs, setJobs] = useState<Job[] | null>([]);
+  const [loading, setLoading] = useState(true);
 
-const Listings = async () => {
-  const jobs = await getJobs();
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await fetch(
+          "https://akil-backend.onrender.com/opportunities/search"
+        );
+        const result = await res.json();
+        setJobs(result.data);
+      } catch (err) {
+        console.error(err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  // console.log(jobs);
+  if (loading) {
+    return <Loading />;
+  }
 
   return (
     <div className="w-[60%] pl-24 py-8 font-paras">
@@ -39,9 +55,9 @@ const Listings = async () => {
             key={job.id}
             title={job.title}
             desc={job.description}
-            location={job.about.location}
-            company={job.company}
-            logo={job.image}
+            location={job.location[0]}
+            company={job.orgName}
+            logo={job.logoUrl}
           />
         ))}
       </div>
