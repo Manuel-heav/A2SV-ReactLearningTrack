@@ -2,6 +2,20 @@
 
 # A job listing application for any kind of jobs
 
+### Task Eight Screenshots
+
+![alt text](./screenshots/image9.png)
+![alt text](./screenshots/image10.png)
+![alt text](./screenshots/image11.png)
+
+## Features from Task Eight
+
+- Protected Routes
+- Form Validation
+- OTP Verification for new Users
+- Persistence sessions with refresh token
+- OAuth With Google
+
 ## Task Six Screenshots
 
 #### Fetching data from Akil API endpoints using fetch API

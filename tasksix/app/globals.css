@@ -11,3 +11,7 @@ body{
 .header{
   @apply font-header text-[#25324B] font-black text-2xl
 }
+
+.inputField{
+  @apply py-2 px-4 mt-2 border-[1px] outline-none border-[#D6DDEB] rounded-lg font-light text-sm
+}
