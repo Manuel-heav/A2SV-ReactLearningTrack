@@ -2,6 +2,27 @@
 
 # A Job listing application for any kind of jobs
 
+### Final Task Screenshots
+
+## Home page
+
+![alt text](./screenshots/home1.png)
+![alt text](./screenshots/home2.png)
+
+## Bookmarks page
+
+![alt text](./screenshots/bookmark.png)
+
+## Tests
+
+## Jest
+
+![alt text](./screenshots/jest.png)
+
+## Cypress
+
+![alt text](./screenshots/cypress.png)
+
 ### Task Eight Screenshots
 
 ![alt text](./screenshots/image9.png)
