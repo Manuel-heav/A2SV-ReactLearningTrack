@@ -1,3 +1,5 @@
+// WRITTEN WITH CHATGPT!
+
 describe('JobCard Bookmark Functionality', () => {
   beforeEach(() => {
     // Mock API responses for bookmark and unbookmark actions
