@@ -5,7 +5,9 @@ export function middleware(request: NextRequest) {
     const hireHubToken = request.cookies.get("hireHubToken")?.value;
     const url = request.nextUrl;
 
-    const isAuthPage = url.pathname.startsWith("/auth");
+    // const isAuthPage = url.pathname.startsWith("/auth");
+    const isAuthPage = url.pathname.startsWith("/");
+
 
     const excludedPaths = [
         "/images/",
@@ -18,7 +20,7 @@ export function middleware(request: NextRequest) {
         return NextResponse.next();
     }
 
-    const isAuthenticated = sessionToken && hireHubToken;
+    const isAuthenticated = sessionToken || hireHubToken;
 
     if (!isAuthenticated && !isAuthPage) {
         return NextResponse.redirect(new URL("/auth/SignIn", request.url));

@@ -29,6 +29,7 @@ const VerifyEmail = () => {
 
   const router = useRouter();
   const [error, setError] = useState("");
+
   const handleSubmit = async (pin: string) => {
     const userEmail = localStorage.getItem("userEmail");
     const formData = JSON.stringify({

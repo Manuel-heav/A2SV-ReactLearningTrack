@@ -1,6 +1,6 @@
 ## HireHub
 
-# A job listing application for any kind of jobs
+# A Job listing application for any kind of jobs
 
 ### Task Eight Screenshots
 

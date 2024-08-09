@@ -1,0 +1,10 @@
+{
+    "success": true,
+    "message": "Job unbookmarked successfully",
+    "data": {
+      "jobId": "123",
+      "userId": "456",
+      "status": "unbookmarked"
+    }
+  }
+  

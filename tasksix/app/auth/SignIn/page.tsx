@@ -35,6 +35,7 @@ const SignIn = () => {
   const onSubmit = async (data: FormValues) => {
     const formData = JSON.stringify(data);
     setLoading(true);
+    console.log(formData);
     try {
       const response = await axios.post(
         "https://akil-backend.onrender.com/login",
@@ -50,6 +51,7 @@ const SignIn = () => {
       if (response.status === 200) {
         console.log(response);
         Cookie.set("hireHubToken", response.data.data.refreshToken);
+        Cookie.set("hireHubAccessToken", response.data.data.accessToken);
         router.push("/");
       } else {
         console.log("Something went wrong");

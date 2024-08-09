@@ -34,14 +34,15 @@ const Signup = () => {
       email: "",
       password: "",
       confirmPassword: "",
-      role: "",
+      role: "user",
     },
     resolver: zodResolver(signupSchema),
   });
 
   const onSubmit = async (data: FormValues) => {
     localStorage.setItem("userEmail", data.email);
-    const formData = JSON.stringify({ ...data, role: "" });
+    const formData = JSON.stringify({ ...data, role: "user" });
+    console.log(formData);
     setLoading(true);
     try {
       const response = await axios.post(
@@ -58,9 +59,6 @@ const Signup = () => {
 
       if (response.status === 200) {
         console.log("Success");
-      } else {
-        console.log();
-        setError("");
       }
     } catch (err) {
       setLoading(false);

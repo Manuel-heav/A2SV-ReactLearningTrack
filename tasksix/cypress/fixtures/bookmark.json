@@ -1,0 +1,10 @@
+{
+    "success": true,
+    "message": "Job bookmarked successfully",
+    "data": {
+      "jobId": "123",
+      "userId": "456",
+      "status": "bookmarked"
+    }
+  }
+  
