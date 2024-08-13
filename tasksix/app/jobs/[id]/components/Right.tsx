@@ -43,6 +43,7 @@ const Right = ({
         <div className="grid grid-cols- text-sm mt-3 gap-2 w-[70%]">
           {categories.map((catagory, i) => (
             <p
+              key={i}
               className={`bg-[#FFB836] bg-opacity-15 text-[#FFB836] py-1 px-2 rounded-full text-center`}
             >
               {catagory}
@@ -59,8 +60,11 @@ const Right = ({
       <div>
         <h1 className="header">Required Skills</h1>
         <div className="flex flex-wrap gap-2 mt-3">
-          {required_skills.map((required_skill) => (
-            <p className="text-[#4640DE] bg-[#4640DE] bg-opacity-5 rounded p-2">
+          {required_skills.map((required_skill, i) => (
+            <p
+              key={i}
+              className="text-[#4640DE] bg-[#4640DE] bg-opacity-5 rounded p-2"
+            >
               {required_skill}
             </p>
           ))}

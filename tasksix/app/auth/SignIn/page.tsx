@@ -134,7 +134,7 @@ const SignIn = () => {
         </form>
 
         <p className="text-sm my-4 font-light">
-          Don't have an account?{" "}
+          Don&apos;t have an account?{" "}
           <Link href="/auth/Signup" className="text-[#2D298E] font-semibold">
             Sign Up
           </Link>

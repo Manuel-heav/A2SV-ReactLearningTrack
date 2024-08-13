@@ -5,8 +5,8 @@ export function middleware(request: NextRequest) {
     const hireHubToken = request.cookies.get("hireHubToken")?.value;
     const url = request.nextUrl;
 
-    // const isAuthPage = url.pathname.startsWith("/auth");
-    const isAuthPage = url.pathname.startsWith("/");
+    const isAuthPage = url.pathname.startsWith("/auth");
+    // const isAuthPage = url.pathname.startsWith("/");
 
 
     const excludedPaths = [

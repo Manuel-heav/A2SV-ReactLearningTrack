@@ -76,8 +76,9 @@ const VerifyEmail = () => {
 
           <div className="flex items-center mt-5 text-sm">
             <p className=" leading-[22.4px] text-[#7C8493]">
-              We've sent a verification code to the email address you provided.
-              To complete the verification process, please enter the code here.
+              We&apos;ve sent a verification code to the email address you
+              provided. To complete the verification process, please enter the
+              code here.
             </p>
           </div>
 

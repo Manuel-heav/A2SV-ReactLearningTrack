@@ -69,6 +69,7 @@ const JobPost = ({ params }: JobPost) => {
       <div className="grid grid-cols-4 py-8">
         <div className="col-span-3">
           <Left
+            key={datePosted}
             title={title}
             desc={description}
             responsibilities={responsibilities}
@@ -79,6 +80,7 @@ const JobPost = ({ params }: JobPost) => {
 
         <div className="col-span-1">
           <Right
+            key={datePosted}
             posted_on={datePostedConverted.toLocaleDateString("en-US", options)}
             deadline={deadlineConverted.toLocaleDateString("en-US", options)}
             location={location[0]}

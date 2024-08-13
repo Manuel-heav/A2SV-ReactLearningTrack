@@ -167,8 +167,8 @@ const Signup = () => {
           </Link>
         </p>
         <p className="w-[400px] text-xs font-light">
-          By clicking 'Continue', you acknowledge that you have read and
-          accepted our{" "}
+          By clicking &apos;Continue&apos;, you acknowledge that you have read
+          and accepted our{" "}
           <a className="text-[#2D298E] font-semibold">Terms of Service</a> and{" "}
           <a className="text-[#2D298E] font-semibold">Privacy Policy.</a>
         </p>
